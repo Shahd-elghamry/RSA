@@ -42,4 +42,5 @@ d = modular_inverse(e,phi_n)
 print ("p=", p, "q= ", q)
 print ("d= ", d)
 exact_time = time.time() - start_time
-print (f"Time taken: {exact_time:.10f} seconds")
+exact_time *= 1000
+print (f"Time taken: {exact_time:.10f} milliseconds")
