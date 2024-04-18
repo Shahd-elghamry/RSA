@@ -19,6 +19,7 @@ def generate_prime(bits):
         if is_prime(num): 
             return num
 
+
 n = int(input("Enter the number to factorize: "))
 e = int(input("Enter public key(e): "))
 encrypted = int(input("Enter encrypted: "))
@@ -26,6 +27,9 @@ message = int(input("Enter decrypted: "))
 decrypted = message
 bits = int(input("Number of bits 8/16: "))
 start_time = time.time()
+
+
+
 p, q = 0, 0
 while p * q != n:
     if bits==8:
