@@ -26,22 +26,24 @@ encrypted = int(input("Enter encrypted: "))
 message = int(input("Enter decrypted: "))
 decrypted = message
 bits = int(input("Number of bits 8/16: "))
+p = int(input("Enter p: "))
+q = int(input("Enter q: "))
 start_time = time.time()
 
 
 
-p, q = 0, 0
-while p * q != n:
-    if bits==8:
-        p = generate_prime(8)  # Adjust the number of bits as needed
-    elif bits==16:
-        p = generate_prime(16) 
-    else:
-        exit() 
-    q = n // p
+# p, q = 0, 0
+# while p * q != n:
+#     if bits==8:
+#         p = generate_prime(8)  # Adjust the number of bits as needed
+#     elif bits==16:
+#         p = generate_prime(16) 
+#     else:
+#         exit() 
+#     q = n // p
 phi_n = (q - 1) * (p - 1)
 
-def find_priv(e, phi_n, encrypted, message):
+def find_priv(e, phi_n, encrypted, decrypted):
     for d in range(2, phi_n):
         if (e * d) % phi_n == 1: 
             decrypted = pow(encrypted, d, n)
