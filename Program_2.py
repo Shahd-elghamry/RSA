@@ -2,22 +2,23 @@
 import random 
 import math 
 import time
+from rsa import is_prime, generate_prime
 
-def is_prime(n):
-    if n < 2:
-        return False
-    for i in range(2, int(n**0.5) + 1):
-        if n % i == 0:
-            return False
-    return True
+# def is_prime(n):
+#     if n < 2:
+#         return False
+#     for i in range(2, int(n**0.5) + 1):
+#         if n % i == 0:
+#             return False
+#     return True
 
-def generate_prime(bits):
-    while True:
-        num = random.getrandbits(bits)
-        if num % 2 == 0:
-            num += 1
-        if is_prime(num): 
-            return num
+# def generate_prime(bits):
+#     while True:
+#         num = random.getrandbits(bits)
+#         if num % 2 == 0:
+#             num += 1
+#         if is_prime(num): 
+#             return num
 
 
 n = int(input("Enter the n: "))

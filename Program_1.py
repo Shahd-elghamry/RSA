@@ -1,7 +1,7 @@
 import math 
 import time 
 import random 
-
+from rsa import rsa_encryption_decryption, factorize_n
 
 def extended_gcd(a, b):
         x0, x1, y0, y1 = 1, 0, 0, 1
@@ -17,13 +17,13 @@ def modular_inverse(e,n):
             raise ValueError('Modular inverse does not exist')
       return x0 % n
 
-def factorize_n(n):
-    for i in range(2, int(n ** 0.5) + 1):
-        if n % i == 0:
-            p = i
-            q = n // i
-            return p, q
-    return None, None
+# def factorize_n(n):
+#     for i in range(2, int(n ** 0.5) + 1):
+#         if n % i == 0:
+#             p = i
+#             q = n // i
+#             return p, q
+#     return None, None
 
 n = int(input("Enter the number to factorize: "))
 
