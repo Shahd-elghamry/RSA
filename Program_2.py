@@ -20,12 +20,11 @@ def generate_prime(bits):
             return num
 
 
-n = int(input("Enter the number to factorize: "))
+n = int(input("Enter the n: "))
 e = int(input("Enter public key(e): "))
 encrypted = int(input("Enter encrypted: "))
 message = int(input("Enter decrypted: "))
-decrypted = message
-bits = int(input("Number of bits 8/16: "))
+# bits = int(input("Number of bits 8/16: "))
 p = int(input("Enter p: "))
 q = int(input("Enter q: "))
 start_time = time.time()
@@ -43,7 +42,7 @@ start_time = time.time()
 #     q = n // p
 phi_n = (q - 1) * (p - 1)
 
-def find_priv(e, phi_n, encrypted, decrypted):
+def find_priv(e, phi_n, encrypted, message):
     for d in range(2, phi_n):
         if (e * d) % phi_n == 1: 
             decrypted = pow(encrypted, d, n)
@@ -51,8 +50,8 @@ def find_priv(e, phi_n, encrypted, decrypted):
                 return d
     return None
 
-d = find_priv(e, phi_n, encrypted, message)
-print("Private key (d): ", d)
+bruteforce = find_priv(e, phi_n, encrypted, message)
+print("Private key (d): ", bruteforce)
 
 exact_time = time.time() - start_time 
 exact_time *= 1000
