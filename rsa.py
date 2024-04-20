@@ -1,7 +1,7 @@
 import random
 import math
 
-bits_input = int(input("How many number of bits do you want (8/16): "))
+bits_input = int(input( "\nHow many number of bits do you want (8/16): "))
 m = int(input("Enter message: "))
 def is_prime(n):
     if n < 2:
@@ -21,11 +21,11 @@ def generate_prime(bits):
         
 def rsa_encryption_decryption():
     if bits_input == 8:
-        p = generate_prime(4)
-        q = generate_prime(4)
-    elif bits_input == 16: 
         p = generate_prime(8)
         q = generate_prime(8)
+    elif bits_input == 16: 
+        p = generate_prime(16)
+        q = generate_prime(16)
     else: 
         print("Wrong number of bits ")
         exit()
@@ -49,13 +49,13 @@ def rsa_encryption_decryption():
             e += 1
 
     d = x % eul
-    print(f"Public key: {e}")
+    print(f"\nPublic key: {e}")
     print(f"n = {n}")
     print(f"Private key: {d}")
 
     C = pow(m, e, n)
     M = pow(C, d, n)
-    print("Encrypted:", C)
+    print("\nEncrypted:", C)
     print("Decrypted:", M)
 
     return n
