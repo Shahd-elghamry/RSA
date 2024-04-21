@@ -25,7 +25,7 @@ def modular_inverse(e,n): # Calculates the modular inverse of a number e modulor
 #             return p, q
 #     return None, None
 
-n = int(input("Enter the number to factorize: "))
+n = int(input("\nEnter the number to factorize: "))
 
 e = int(input("Enter public key(e): "))
 
@@ -43,4 +43,4 @@ print ("p=", p, "q= ", q)
 print ("d= ", d)
 exact_time = time.time() - start_time
 exact_time *= 1000
-print (f"Time taken: {exact_time:.10f} milliseconds")
+print (f"Time taken: {exact_time:.10f} milliseconds\n ")
