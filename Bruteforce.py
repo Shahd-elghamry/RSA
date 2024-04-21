@@ -2,7 +2,7 @@
 import random 
 import math 
 import time
-from rsa import is_prime, generate_prime
+from rsa import is_prime, generate_prime # I take those functions from another file 
 
 # def is_prime(n):
 #     if n < 2:
@@ -41,9 +41,9 @@ start_time = time.time()
 #     else:
 #         exit() 
 #     q = n // p
-phi_n = (q - 1) * (p - 1)
+phi_n = (q - 1) * (p - 1) # Euler totient formula
 
-def find_priv(e, phi_n, encrypted, message):
+def find_bruteforce(e, phi_n, encrypted, message): # This function fins the d
     for d in range(2, phi_n):
         if (e * d) % phi_n == 1: 
             decrypted = pow(encrypted, d, n)
@@ -51,9 +51,9 @@ def find_priv(e, phi_n, encrypted, message):
                 return d
     return None
 
-bruteforce = find_priv(e, phi_n, encrypted, message)
+bruteforce = find_bruteforce(e, phi_n, encrypted, message) # Just adding the function into a variable 
 print("\nPrivate key (d): ", bruteforce)
 
-exact_time = time.time() - start_time 
-exact_time *= 1000
+exact_time = time.time() - start_time # Finding the time taken
+exact_time *= 1000 # Converting tbe seconds taken into milliseconds
 print(f"Time taken: {exact_time:.15f} milli-seconds\n")
