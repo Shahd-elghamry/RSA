@@ -44,10 +44,13 @@ start_time = time.time()
 phi_n = (q - 1) * (p - 1) # Euler totient formula
 
 def find_bruteforce(e, phi_n, encrypted, message): # This function fins the d
+    attempts = 0
     for d in range(2, phi_n):
+        attempts +=1
         if (e * d) % phi_n == 1: 
             decrypted = pow(encrypted, d, n)
             if decrypted == message:
+                print(f"\nAttempts made: {attempts}")
                 return d
     return None
 

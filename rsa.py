@@ -53,9 +53,9 @@ def rsa():
             e += 1
 
     d = x % eul # To generate the private key 
-    print(f"\nPublic key: {n,e}")
+    print(f"\nPublic key(n,e): {n,e}")
     print(f"n = {n}")
-    print(f"Private key: {n,d}")
+    print(f"Private key(n,d): {n,d}")
 
     C = pow(m, e, n)
     M = pow(C, d, n)
