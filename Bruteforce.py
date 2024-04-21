@@ -59,4 +59,4 @@ print("\nPrivate key (d): ", bruteforce)
 
 exact_time = time.time() - start_time # Finding the time taken
 exact_time *= 1000 # Converting tbe seconds taken into milliseconds
-print(f"Time taken: {exact_time:.15f} milli-seconds\n")
+print(f"Time taken in bruteforce was: {exact_time:.15f} milli-seconds\n")
