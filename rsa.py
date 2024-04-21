@@ -23,7 +23,7 @@ def generate_prime(bits): # generate a random prime number with the given number
         if is_prime(num): 
             return num
         
-def rsa_encryption_decryption(): 
+def rsa(): 
     if bits_input == 8: # If the bits inputed is 8 it does the following 
         p = generate_prime(8)
         q = generate_prime(8)
@@ -53,9 +53,9 @@ def rsa_encryption_decryption():
             e += 1
 
     d = x % eul # To generate the private key 
-    print(f"\nPublic key: {e}")
+    print(f"\nPublic key: {n,e}")
     print(f"n = {n}")
-    print(f"Private key: {d}")
+    print(f"Private key: {n,d}")
 
     C = pow(m, e, n)
     M = pow(C, d, n)
@@ -73,8 +73,8 @@ def factorize_n(n): # This function finds the factorization of n which are p and
     return None, None
 
 # Call the encryption/decryption function
-n = rsa_encryption_decryption()
+n = rsa()
 
 # Factorize n and calculate p and q
 p, q = factorize_n(n)
-print(f"Factorized n: p = {p}, q = {q}")
+print(f"Factorized n: p = {p}, q = {q}\n")

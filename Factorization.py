@@ -1,7 +1,7 @@
 import math 
 import time 
 import random 
-from rsa import rsa_encryption_decryption, factorize_n
+from rsa import rsa, factorize_n
 
 def extended_gcd(a, b):
         x0, x1, y0, y1 = 1, 0, 0, 1
